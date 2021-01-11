@@ -1,6 +1,6 @@
 <?php
     namespace App\dao;
-
+    use \PDO;
     use App\utils\ConnectionFactory;
 
 
