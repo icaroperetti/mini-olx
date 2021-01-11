@@ -5,7 +5,7 @@
 
     use App\dao\CategoriaDAO;
     use App\dao\ProdutoDAO;
-    use App\utils\FlashMessages;
+    
 
     $id = $_GET['id'];
 

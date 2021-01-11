@@ -4,6 +4,7 @@
 	require_once $_SERVER['DOCUMENT_ROOT'] . '/bootstrap.php'; 
 
 	use App\dao\ProdutoDAO;
+	
 
 	if(isset($_GET['categoria_id'])){
 		$stmt_produtos = produtoDao::getByCategoriaId($_GET['categoria_id']);

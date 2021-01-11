@@ -1,4 +1,6 @@
 <?php
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/bootstrap.php';
     use App\dao\CategoriaDAO;
 
     $stmt_sidebar_categoria = CategoriaDao::getAll();

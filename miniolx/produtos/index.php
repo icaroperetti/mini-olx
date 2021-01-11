@@ -1,12 +1,11 @@
 <?php
-	require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php'; 
-    require_once $_SERVER['DOCUMENT_ROOT'] . '/bootstrap.php'; 
-	
-	use App\dao\ProdutoDAO;
-	
-	
+require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/bootstrap.php';
 
-	$stmt = produtoDAO::getAll();
+use App\dao\ProdutoDAO;
+
+
+$stmt = produtoDAO::getAll();
 
 ?>
 
@@ -24,7 +23,7 @@
 	<!-- Content -->
 	<section id="content">
 		<div class="container">
-			<?php include("../partials/_flash_messages.php")?>
+			<?php include("../partials/_flash_messages.php") ?>
 			<div class="row">
 				<?php include("../partials/_sidebar.php") ?>
 
@@ -47,10 +46,10 @@
 								<td>
 									<?php if ($row->url_imagem_produto) : ?>
 
-										<img src="<?= $row->url_imagem_produto ?>"  alt="<?= $row->nome ?>">
+										<img src="<?= $row->url_imagem_produto ?>" alt="<?= $row->nome ?>">
 
 									<?php else : ?>
-										<img src="/img/no-image.png"  alt="<?= $row->nome ?>">
+										<img src="/img/no-image.png" alt="<?= $row->nome ?>">
 									<?php endif ?>
 								</td>
 								<td><?= $row->nome ?></td>
@@ -67,6 +66,8 @@
 
 					</table>
 				</div>
+			</div>
+		</div>
 	</section><!-- End Content -->
 
 	<!-- incluindo scripts js -->

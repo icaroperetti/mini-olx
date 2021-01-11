@@ -1,7 +1,10 @@
 <?php
-	require_once('../src/dao/categoriaDAO.php');
-	
-	$stmt = CategoriaDao::getAll();
+require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/bootstrap.php';
+
+use App\dao\CategoriaDAO;
+
+$stmt = CategoriaDAO::getAll();
 
 ?>
 
@@ -16,26 +19,13 @@
 <body>
 	<!-- código html da aplicação vai aqui -->
 	<?php include("../partials/_header.php") ?>
-
-
 	<!-- Content -->
 	<section id="content">
 		<div class="container">
 			<div class="row">
-				<aside class="col-md-3">
-					<h2>Categorias</h2>
-					<ul>
-						<li><a href="#">Imóveis</a></li>
-						<li><a href="#">Carros</a></li>
-						<li><a href="#">Caminhões</a></li>
-						<li><a href="#">Mobiles</a></li>
-					</ul>
-				</aside>
-
-				<div class="col-md-9">
+				<div class="col-md-12">
 					<h2>Cadastro de categorias <a href="/categorias/new.php" class="btn btn-success float-right">Nova Categoria</a></h2>
-
-					<table class="table table-responsive" id="tabelacategorias">
+					<table class="table" id="tabelacategorias">
 						<tr>
 							<th>ID</th>
 							<th>NOME</th>
@@ -53,10 +43,10 @@
 								</td>
 							</tr>
 						<?php endwhile ?>
-
-
 					</table>
 				</div>
+			</div>
+		</div>
 	</section><!-- End Content -->
 
 	<!-- incluindo scripts js -->

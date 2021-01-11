@@ -1,5 +1,4 @@
 <?php
-   
     namespace App\dao;
 
     use App\utils\ConnectionFactory;
