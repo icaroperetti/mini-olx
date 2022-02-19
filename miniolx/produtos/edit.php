@@ -1,26 +1,27 @@
 <?php
 
-    require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php'; 
-    require_once $_SERVER['DOCUMENT_ROOT'] . '/bootstrap.php'; 
-    
-    use App\dao\CategoriaDAO;
-    use App\dao\ProdutoDAO; 
-    use App\utils\FlashMessages;
-    
-    $id = $_GET['id'];
+require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/bootstrap.php';
 
-    $stmt_cat = CategoriaDao::getAll();
+use App\dao\CategoriaDAO;
+use App\dao\ProdutoDAO;
+use App\utils\FlashMessages;
 
-    $stmt_prod = ProdutoDao::getById($id);
+$id = $_GET['id'];
 
-    $produto = $stmt_prod->fetch(PDO::FETCH_OBJ);
+$stmt_cat = CategoriaDao::getAll();
 
-     
+$stmt_prod = ProdutoDao::getById($id);
+
+$produto = $stmt_prod->fetch(PDO::FETCH_OBJ);
+
+
 
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <?php include("../partials/_head.php") ?>
     <title>Mini Olx - Cadastro de Produtos</title>
@@ -32,14 +33,14 @@
     <!-- Content -->
     <section id="content">
         <div class="container">
-           <?php include("../partials/_flash_messages.php")?>
+            <?php include("../partials/_flash_messages.php") ?>
             <div class="row">
                 <?php include("../partials/_sidebar.php") ?>
                 <div class="col-md-9">
                     <h2>Edição de Produto</h2>
                     <form action="/produtos/update.php" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="id" value="<?= $produto->id ?>">
-                        
+
                         <div class="form-group row">
                             <label for="nome" class="col-sm-2 col-form-label">Nome</label>
                             <div class="col-sm-10">
@@ -48,9 +49,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="imagem" class="col-sm-2 col-form-label">Imagem</label>
+                            <!-- <label for="imagem" class="col-sm-2 col-form-label">Imagem</label> -->
                             <div class="col-sm-10">
-                                <input type="file" class="form-control-file" id="imagem" name="imagem" />
+                                <!-- <input type="file" class="form-control-file" id="imagem" name="imagem" /> -->
                                 <br>
                                 <?php if ($produto->url_imagem_produto) : ?>
                                     <img src="<?= $produto->url_imagem_produto ?>" class="img-fluid" alt="<?= $produto->nome ?>">
