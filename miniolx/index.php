@@ -36,7 +36,7 @@ if (isset($_GET['categoria_id'])) {
 					<!-- <h2>Produtos</h2> -->
 					<div class="row">
 						<?php while ($produto = $stmt_produtos->fetch(PDO::FETCH_OBJ)) : ?>
-							<div class="col-md-3 produto">
+							<div class="col-md-4 produto">
 								<div class="m-3">
 									<h4 class="text-center lead font-weight-500"><?= $produto->nome ?></h4>
 

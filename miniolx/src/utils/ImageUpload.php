@@ -53,7 +53,7 @@ class ImageUpload
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
         $type = finfo_file($finfo, $this->imagem["tmp_name"]);
 
-        if (isset($type) &&  !in_array($type, array("image/png", "image/jpeg", "image/gif"))) {
+        if (isset($type) &&  !in_array($type, array("image/png", "image/jpeg", "image/gif", "image/webp"))) {
             $this->errors[] = "O arquivo enviado não é um arquivo de imagem válido.";
             return;
         }

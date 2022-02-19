@@ -1,7 +1,8 @@
 {
     "name": "icaro/miniolx",
     "require": {
-        "monolog/monolog": "^2.1"
+        "monolog/monolog": "^2.1",
+        "dompdf/dompdf": "^1.2"
     },
     "autoload":{
         "psr-4": {"App\\": "src/"}

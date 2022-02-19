@@ -12,7 +12,7 @@ class ProdutoDao
     {
         $con = ConnectionFactory::getConnection();
 
-        $stmt = $con->prepare("SELECT p.id as id,p.nome as nome,p.descricao,p.url_imagem_produto,p.preco,p.categoria_id,c.nome as categoria_nome FROM produtos p JOIN categorias c ON (p.categoria_id = c.id)");
+        $stmt = $con->prepare("SELECT p.id as id,p.nome as nome,p.descricao,p.url_imagem_produto,p.preco,p.categoria_id,c.nome as categoria_nome FROM produtos p JOIN categorias c ON (p.categoria_id = c.id) ORDER BY  c.nome ASC");
         $stmt->execute();
         return $stmt;
     }
